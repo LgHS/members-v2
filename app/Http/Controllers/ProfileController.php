@@ -93,7 +93,9 @@ class ProfileController extends Controller
             $data = [];
 
             foreach($roles as $role) {
-                $data[$role['name']] = $role['description'] ?? '';
+                if(!in_array($role['name'], ['default-roles-lghs', 'uma_authorization', 'offline_access'])) {
+                    $data[$role['name']] = $role['description'] ?? '';
+                }
             }
 
             $response = Http::withHeaders([
@@ -104,13 +106,15 @@ class ProfileController extends Controller
             foreach($clients as $client) {
                 $clientid = $client['id'];
                 $resource = $client['clientId'];
-                $response = Http::withHeaders([
-                    'Authorization' => 'Bearer '.$token
-                ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/users/'.$id.'/role-mappings/clients/'.$clientid.'/composite');
-                $roles = $response->ok() ? (object)$response->json() : [];
+                if(!in_array($resource, ['account', 'sign-in-v2'])) {
+                    $response = Http::withHeaders([
+                        'Authorization' => 'Bearer '.$token
+                    ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/users/'.$id.'/role-mappings/clients/'.$clientid.'/composite');
+                    $roles = $response->ok() ? (object)$response->json() : [];
 
-                foreach($roles as $role) {
-                    $data[$resource.'/'.$role['name']] = $role['description'] ?? '';
+                    foreach($roles as $role) {
+                        $data[$resource.'/'.$role['name']] = $role['description'] ?? '';
+                    }
                 }
             }
             return $data;
