@@ -34,17 +34,14 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a href="https://wiki.liegehacker.space/" class="navbar-item">
+                <a href="https://wiki.liegehacker.space/" target="_blank" class="navbar-item">
                     Wiki
                 </a>
-                <a href="https://chat.lghs.be/" class="navbar-item">
+                <a href="https://chat.lghs.be/" target="_blank" class="navbar-item">
                     Chat
                 </a>
-                <a href="https://accounting.lghs.be/" class="navbar-item">
+                <a href="https://accounting.lghs.be/" target="_blank" class="navbar-item">
                     Accounting
-                </a>
-                <a href="https://auth.lghs.be/auth/realms/LGHS/account/" class="navbar-item">
-                    Account
                 </a>
             </div>
 
