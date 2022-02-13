@@ -145,6 +145,9 @@
                     </form>
                 </div>
                 <div class="column">
+                    <a href="https://auth.lghs.be/auth/realms/LGHS/account/password">
+                        Changer mon mot de passe
+                    </a>
                     <h2 class="is-size-4">Groupes</h2>
                     <ul>
                     @foreach ($groups as $group)
