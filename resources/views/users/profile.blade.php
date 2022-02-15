@@ -57,7 +57,7 @@
                             <div class="field-body">
                                 <div class="field is-expanded">
                                     <p class="control is-expanded">
-                                        <input class="input" type="email" name="email" placeholder="Email" value="{{ $user->email }}">
+                                        <input class="input" type="email" name="email" placeholder="Email" disabled value="{{ $user->email }}">
                                     </p>
                                 </div>
                             </div>

@@ -36,6 +36,7 @@ class ProfileController extends Controller
         $id = $data['id'];
         unset($data['_token']);
         unset($data['current_email']);
+        unset($data['email']); // Disable editing email
         unset($data['id']);
         $this->updateProfile($id, $data);
         return redirect()->back();
