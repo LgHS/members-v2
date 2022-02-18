@@ -40,6 +40,11 @@ return [
             'driver' => 'keycloak',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'access',
+            'hash' => true,
+        ],
     ],
 
     /*
@@ -64,11 +69,11 @@ return [
             'driver' => 'keycloak-users',
             'model' => Lghs\KeycloakGuard\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'access' => [
+             'driver' => 'database',
+             'table' => 'access',
+             'model' => \App\Models\Access::class
+        ]
     ],
 
     /*
