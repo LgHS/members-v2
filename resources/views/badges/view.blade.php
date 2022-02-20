@@ -28,7 +28,7 @@
                                             <select name="user_id">
                                                 <option>----</option>
                                                 @foreach ($users as $user)
-                                                    <option value="{{$user['id']}}" @if($user['id'] == $badge->user_id) selected @endif>{{$user['username']}}</option>
+                                                    <option value="{{$user['id']}}" @if($id && $user['id'] == $badge->user_id) selected @endif>{{$user['username']}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -63,7 +63,7 @@
                                         <div class="select is-multiple">
                                             <select multiple size="8" name="roles_ids[]">
                                                 @foreach ($roles as $role)
-                                                    <option value="{{ $role['id'] }}" @if(in_array($role['id'], explode(',', $badge->roles_ids))) selected @endif >{{ $role['role_name'] }}</option>
+                                                    <option value="{{ $role['id'] }}" @if($id && in_array($role['id'], explode(',', $badge->roles_ids))) selected @endif >{{ $role['role_name'] }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -80,7 +80,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <label class="checkbox">
-                                            <input type="checkbox" name="is_banned" @if($badge->is_banned == 'on') checked @endif>
+                                            <input type="checkbox" name="is_banned" @if($id && $badge->is_banned == 'on') checked @endif>
                                             Oui
                                         </label>
                                     </div>
