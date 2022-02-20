@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Access extends Model
+class Roles extends Model
 {
     use HasFactory;
-    protected $table = 'access';
+    protected $table = 'roles';
     public $timestamps = false;
     protected $connection = 'sqlite';
     protected $primaryKey = 'id';
-    public $incrementing = false;
+    public $incrementing = true;
+
 }

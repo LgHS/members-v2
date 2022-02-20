@@ -15,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'keycloak'], function () {
     Route::get('/', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-    Route::post('/user', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.update');
-    Route::get('/user/{id}', [App\Http\Controllers\ProfileController::class, 'index'])->name('users.profile');
-    Route::get('/users', [App\Http\Controllers\UsersController::class, 'list'])->name('users.list');
+    Route::group(['prefix' => 'users', 'as' => 'users::'], function () {
+        Route::post('/', [App\Http\Controllers\ProfileController::class, 'update'])->name('update');
+        Route::get('/{id}', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+        Route::get('/', [App\Http\Controllers\UserController::class, 'list'])->name('list');
+    });
+    Route::group(['prefix' => 'badges', 'as' => 'badges::'], function () {
+        Route::post('/', [App\Http\Controllers\BadgeController::class, 'store'])->name('store');
+        Route::get('/{id}', [App\Http\Controllers\BadgeController::class, 'view'])->name('view');
+        Route::get('/', [App\Http\Controllers\BadgeController::class, 'list'])->name('list');
+        Route::delete('/{id}', [App\Http\Controllers\BadgeController::class, 'destroy'])->name('destroy');
+    });
 });
 

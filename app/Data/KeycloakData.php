@@ -1,27 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Data;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class UserController extends Controller
-{
-    public function list() {
-        $users = $this->getUsers();
-        $data = [];
-        foreach($users as $user) {
-            $data[] = [
-                "id" => $user['id'],
-                "username" => $user['username'],
-            ];
-        }
-        return response()->json($data);
-    }
-
-
-    protected function getUsers() {
+class KeycloakData {
+    public function getUsers() {
         $token = $this->getToken();
         if($token) {
             $response = Http::withHeaders([
