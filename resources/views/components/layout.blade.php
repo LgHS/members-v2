@@ -33,7 +33,7 @@
             </a>
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
+            <div class="navbar-end">
                 <a href="https://wiki.liegehacker.space/" target="_blank" class="navbar-item">
                     Wiki
                 </a>

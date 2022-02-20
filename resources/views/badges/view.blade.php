@@ -26,7 +26,7 @@
                                     <div class="control is-expanded">
                                         <div class="select">
                                             <select name="user_id">
-                                                <option>----</option>
+                                                <option>-- Visiteur --</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{$user['id']}}" @if($id && $user['id'] == $badge->user_id) selected @endif>{{$user['username']}}</option>
                                                 @endforeach
