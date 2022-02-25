@@ -32,7 +32,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="field is-horizontal">
                             <div class="field-label">
                                 <label class="label">Nom & Prénom</label>
@@ -135,8 +134,12 @@
                                 <div class="field">
                                     <div class="control">
                                         <button class="button is-primary" type="submit">
-                                            Enregistrer
+                                            Enregistrer mes données
                                         </button>
+                                        <a class="button is-link" href="https://auth.lghs.be/auth/realms/LGHS/account/password" target="_blank">
+                                            Changer mon mot de passe
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -145,9 +148,6 @@
                     </form>
                 </div>
                 <div class="column">
-                    <a href="https://auth.lghs.be/auth/realms/LGHS/account/password" target="_blank" >
-                        Changer mon mot de passe
-                    </a>
                     <h2 class="is-size-4">Groupes</h2>
                     <ul>
                     @foreach ($groups as $group)
