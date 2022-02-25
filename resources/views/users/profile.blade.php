@@ -48,12 +48,12 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="lastName" placeholder="Nom" value="{{ $user->lastName }}">
+                                        <input class="input" type="text" name="lastName" required placeholder="Nom" value="{{ $user->lastName }}">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="firstName" placeholder="Prénom" value="{{ $user->firstName }}">
+                                        <input class="input" type="text" name="firstName" required placeholder="Prénom" value="{{ $user->firstName }}">
                                     </p>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                             <div class="field-body">
                                 <div class="field is-expanded">
                                     <p class="control is-expanded">
-                                        <input class="input" type="email" name="email" placeholder="Email" disabled value="{{ $user->email }}">
+                                        <input class="input" type="email" name="email" required placeholder="Email" disabled value="{{ $user->email }}">
                                     </p>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                             </a>
                                         </p>
                                         <p class="control is-expanded">
-                                            <input class="input" type="tel" name="attributes[phoneNumber]" placeholder="Numéro de téléphone" value="{{ $user->attributes['phoneNumber'][0] ?? '' }}">
+                                            <input class="input" type="tel" required name="attributes[phoneNumber]" placeholder="Numéro de téléphone" value="{{ $user->attributes['phoneNumber'][0] ?? '' }}">
                                         </p>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="attributes[street]" placeholder="Rue & numéro" value="{{ $user->attributes['street'][0] ?? '' }}">
+                                        <input class="input" type="text" required name="attributes[street]" placeholder="Rue & numéro" value="{{ $user->attributes['street'][0] ?? '' }}">
                                     </p>
                                 </div>
                             </div>
@@ -111,12 +111,12 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="attributes[postal_code]" placeholder="Code postal" value="{{ $user->attributes['postal_code'][0] ?? '' }}">
+                                        <input class="input" type="text" required name="attributes[postal_code]" placeholder="Code postal" value="{{ $user->attributes['postal_code'][0] ?? '' }}">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="attributes[locality]" placeholder="Localité" value="{{ $user->attributes['locality'][0] ?? '' }}">
+                                        <input class="input" type="text" required name="attributes[locality]" placeholder="Localité" value="{{ $user->attributes['locality'][0] ?? '' }}">
                                     </p>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="attributes[country]" placeholder="Pays" value="{{ $user->attributes['country'][0] ?? '' }}">
+                                        <input class="input" type="text" required name="attributes[country]" placeholder="Pays" value="{{ $user->attributes['country'][0] ?? '' }}">
                                     </p>
                                 </div>
                             </div>

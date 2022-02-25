@@ -33,6 +33,16 @@ class ProfileController extends Controller
         }
 
         $data = $request->all();
+        $validated = $request->validate([
+            'username' => 'required',
+            'lastName' => 'required',
+            'firstName' => 'required',
+            'attributes.phoneNumber' => 'required',
+            'attributes.street' => 'required',
+            'attributes.postal_code' => 'required',
+            'attributes.locality' => 'required',
+            'attributes.country' => 'required',
+        ]);
         $id = $data['id'];
         unset($data['_token']);
         unset($data['current_email']);
