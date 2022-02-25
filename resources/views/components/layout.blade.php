@@ -38,41 +38,36 @@
                         Mon profil
                 </a>
             </div>
-
             <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Apps
-        </a>
-        <div class="navbar-dropdown">
-            <a href="https://wiki.liegehacker.space/" target="_blank" class="navbar-item">
-                Wiki
-            </a>
-            <a href="https://chat.lghs.be/" target="_blank" class="navbar-item">
-                Chat
-            </a>
-            <a href="https://chaman.lghs.be/" target="_blank" class="navbar-item">
-                Chaman
-            </a>
-            <a href="https://accounting.lghs.be/" target="_blank" class="navbar-item">
-                Accounting
-            </a>
-        </div>
-      </div>
-
-
-      <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="button is-warning" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
-              <span>Déconnexion</span>
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-
+                <a class="navbar-link">
+                Apps
+                </a>
+                <div class="navbar-dropdown">
+                    <a href="https://wiki.liegehacker.space/" target="_blank" class="navbar-item">
+                        Bookstack - Wiki
+                    </a>
+                    <a href="https://chat.lghs.be/" target="_blank" class="navbar-item">
+                        Rocket.Chat - Chat
+                    </a>
+                    <a href="https://chaman.lghs.be/" target="_blank" class="navbar-item">
+                        Chaman - Inventaire
+                    </a>
+                    <a href="https://accounting.lghs.be/" target="_blank" class="navbar-item">
+                        Accounting - Comptabilité
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                <p class="control">
+                    <a class="button is-warning" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
+                    <span>Déconnexion</span>
+                    </a>
+                </p>
+                </div>
+            </div>
+            </div>
         </div>
     </nav>
 
