@@ -32,7 +32,7 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-menu">
             <div class="navbar">
                 <a href="/" class="navbar-item">
                         Mon profil
