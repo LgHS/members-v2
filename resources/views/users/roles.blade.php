@@ -18,7 +18,7 @@
                         <li>{{$group['path']}}</li>
                     @endforeach
                     </ul>
-                    <h2 class="is-size-4">Roles</h2>
+                    <h2 class="is-size-4">Rôles (Permissions)</h2>
                     <table class="table is-striped is-narrow is-hoverable is-fullwidth">
                         <thead>
                             <tr>
