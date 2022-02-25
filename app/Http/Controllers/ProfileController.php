@@ -20,7 +20,14 @@ class ProfileController extends Controller
         }
         if(!$email) $email = Auth::id();
         $user = $this->getProfile($email);
-        return view('users/profile', ['user' => $user, 'groups' => $this->getUserGroups($user->id), 'roles' => $this->getUserRoles($user->id)]);
+        return view('users/profile', ['user' => $user]);
+    }
+
+    public function roles(Request $request)
+    {
+        $email = Auth::id();
+        $user = $this->getProfile($email);
+        return view('users/roles', ['groups' => $this->getUserGroups($user->id), 'roles' => $this->getUserRoles($user->id)]);
     }
 
     public function update(Request $request) {

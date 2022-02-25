@@ -37,6 +37,12 @@
                 <a href="/" class="navbar-item">
                         Mon profil
                 </a>
+                <a href="/roles" class="navbar-item">
+                        Accès
+                </a>
+                <a href="/badges" class="navbar-item">
+                        Badges
+                </a>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">

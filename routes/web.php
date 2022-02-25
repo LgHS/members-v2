@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'keycloak'], function () {
     Route::get('/', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+    Route::get('/roles', [App\Http\Controllers\ProfileController::class, 'roles'])->name('roles');
     Route::group(['prefix' => 'users', 'as' => 'users::'], function () {
         Route::post('/', [App\Http\Controllers\ProfileController::class, 'update'])->name('update');
         Route::get('/{id}', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
