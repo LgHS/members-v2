@@ -36,7 +36,7 @@
                             <div class="field-body">
                                 <div class="field is-expanded">
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" name="username" placeholder="Nom d'utilisateur" value="{{ $user->username }}">
+                                        <input class="input" type="text" name="username" required placeholder="Nom d'utilisateur" value="{{ $user->username }}">
                                     </p>
                                 </div>
                             </div>
