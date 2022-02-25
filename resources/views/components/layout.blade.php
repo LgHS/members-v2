@@ -76,7 +76,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="name">Liège Hackerspace - <a href="https://github.com/LgHS/members-v2">Passport</a> formelly members-v2.</div>
+                <div class="name">Liège Hackerspace - <a href="https://github.com/LgHS/members-v2">Passport</a> formerly members-v2.</div>
             </div>
         </div>
     </footer>
