@@ -10,9 +10,18 @@
     </section>
     <section class="section">
         <div class="container">
+            @if ($errors->any())
+                <div class="notification is-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="columns">
                 <div class="column is-three-quarters">
-                    <form method="POST" action="/user">
+                    <form method="POST" action="/users">
                         @csrf
 
                         <input type="hidden" value="{{ $user->email }}" name="current_email" />
