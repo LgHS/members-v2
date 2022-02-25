@@ -40,6 +40,9 @@
                 <a href="https://chat.lghs.be/" target="_blank" class="navbar-item">
                     Chat
                 </a>
+                <a href="https://chaman.lghs.be/" target="_blank" class="navbar-item">
+                    Chaman
+                </a>
                 <a href="https://accounting.lghs.be/" target="_blank" class="navbar-item">
                     Accounting
                 </a>
@@ -53,12 +56,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="name">Liège HackerSpace</div>
-                <div>
-                    <ul class="footer-social-links">
-
-                    </ul>
-                </div>
+                <div class="name">Liège Hackerspace</div>
             </div>
         </div>
     </footer>
