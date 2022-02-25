@@ -32,7 +32,7 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar">
                 <a href="/" class="navbar-item">
                         Mon profil
@@ -61,7 +61,7 @@
             <div class="navbar-item">
                 <div class="field is-grouped">
                 <p class="control">
-                    <a class="button is-warning" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
+                    <a class="button is-danger" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
                     <span>Déconnexion</span>
                     </a>
                 </p>
@@ -76,7 +76,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="name">Liège Hackerspace</div>
+                <div class="name">Liège Hackerspace - <a href="https://github.com/LgHS/members-v2">Passport</a> formelly members-v2.</div>
             </div>
         </div>
     </footer>
