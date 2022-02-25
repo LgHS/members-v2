@@ -11,7 +11,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column">
+                <div class="column content">
                     <h2 class="is-size-4">Groupes</h2>
                     <ul>
                     @foreach ($groups as $group)
@@ -20,9 +20,11 @@
                     </ul>
 
                     <h2 class="is-size-4 mt-4">Roles</h2>
+                    <ul>
                     @foreach ($roles as $key => $role)
-                        <div><strong>{{$key}}:</strong> {{$role}}</div>
+                        <li><strong>{{$key}}:</strong> {{$role}}</li>
                     @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
