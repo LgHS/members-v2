@@ -3,7 +3,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Badges
+                    Badges RFID
                 </h1>
                 <a href="{{ route('badges::view', ['id' => 'new']) }}" class="button is-success" >
                     Nouveau badge
