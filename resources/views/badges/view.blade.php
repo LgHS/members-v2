@@ -3,7 +3,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Mon badge RFID
+                    Badge RFID
                 </h1>
             </div>
         </div>
