@@ -55,6 +55,9 @@
                     <a href="https://chat.lghs.be/" target="_blank" class="navbar-item">
                         Rocket.Chat - Chat
                     </a>
+                    <!--<a href="https://mattermost.lghs.be/" target="_blank" class="navbar-item">
+                        Mattermost - Chat
+                    </a>-->
                     <a href="https://chaman.lghs.be/" target="_blank" class="navbar-item">
                         Chaman - Inventaire
                     </a>
