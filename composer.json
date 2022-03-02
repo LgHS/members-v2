@@ -10,7 +10,8 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.7",
-        "lghs/laravel-keycloak-guard": "^3.2"
+        "lghs/laravel-keycloak-guard": "^3.2",
+        "php-mqtt/laravel-client": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
