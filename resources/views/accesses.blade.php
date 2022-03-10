@@ -30,12 +30,14 @@
                             <tr>
                                 <th>Description</th>
                                 <th>Token</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>Description</th>
                                 <th>Token</th>
+                                <th></th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -43,6 +45,13 @@
                             <tr>
                                 <td>{{ $access->id }}</td>
                                 <td>{{ $access->api_token }}</td>
+                                <td>
+                                    <form action="{{ route('accesses::destroy', ['api_token' => $access->api_token]) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="button is-light">Supprimer</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
