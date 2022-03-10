@@ -34,17 +34,17 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar">
-                <a href="/" class="navbar-item">
+                <a href="{{ route('profile') }}" class="navbar-item">
                         Mon profil
                 </a>
-                <a href="/roles" class="navbar-item">
+                <a href="{{ route('roles') }}" class="navbar-item">
                         Accès
                 </a>
-                <a href="/badges" class="navbar-item">
+                <a href="{{ route('badges::list') }}" class="navbar-item">
                         Badges
                 </a>
                 @if(Auth::hasRole('members-admin'))
-                <a href="/accesses" class="navbar-item">
+                <a href="{{ route('accesses::list') }}" class="navbar-item">
                         Clés API
                 </a>
                 @endif
