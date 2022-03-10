@@ -43,6 +43,11 @@
                 <a href="/badges" class="navbar-item">
                         Badges
                 </a>
+                @if(Auth::hasRole('members-admin'))
+                <a href="/accesses" class="navbar-item">
+                        Clés API
+                </a>
+                @endif
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">

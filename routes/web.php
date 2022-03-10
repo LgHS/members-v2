@@ -27,5 +27,10 @@ Route::group(['middleware' => 'keycloak'], function () {
         Route::get('/', [App\Http\Controllers\BadgeController::class, 'list'])->name('list');
         Route::delete('/{id}', [App\Http\Controllers\BadgeController::class, 'destroy'])->name('destroy');
     });
+    Route::group(['prefix' => 'accesses', 'as' => 'accesses::'], function () {
+        Route::post('/', [App\Http\Controllers\AccessController::class, 'generate'])->name('generate');
+        Route::get('/', [App\Http\Controllers\AccessController::class, 'list'])->name('list');
+        Route::delete('/{api_token}', [App\Http\Controllers\AccessController::class, 'destroy'])->name('destroy');
+    });
 });
 

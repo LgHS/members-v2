@@ -72,7 +72,7 @@ return [
         'access' => [
              'driver' => 'database',
              'table' => 'access',
-             'model' => \App\Models\Access::class
+             'model' => \App\Models\Accesses::class
         ]
     ],
 
