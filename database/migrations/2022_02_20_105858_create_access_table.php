@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('access', function (Blueprint $table) {
-            $table->text('id', 16);
-            $table->text('api_token', 256);
-        });
+        if(!Schema::hasTable('access')) {
+            Schema::create('access', function (Blueprint $table) {
+                $table->text('id', 16);
+                $table->text('api_token', 256);
+            });
+        }
     }
 
     /**

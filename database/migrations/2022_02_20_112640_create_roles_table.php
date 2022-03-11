@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->text('role_name', '64');
-        });
+        if(!Schema::hasTable('roles')) {
+            Schema::create('roles', function (Blueprint $table) {
+                $table->id();
+                $table->text('role_name', '64');
+            });
+        }
     }
 
     /**

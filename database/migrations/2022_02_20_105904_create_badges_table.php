@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('badges', function (Blueprint $table) {
-            $table->id('id');
-            $table->text('user_id', 128);
-            $table->text('roles_ids', 1024);
-            $table->integer('is_banned');
-            $table->text('welcome_name', 64);
-        });
+        if(!Schema::hasTable('badges')) {
+            Schema::create('badges', function (Blueprint $table) {
+                $table->id('id');
+                $table->text('user_id', 128);
+                $table->text('roles_ids', 1024);
+                $table->integer('is_banned');
+                $table->text('welcome_name', 64);
+            });
+        }
     }
 
     /**
