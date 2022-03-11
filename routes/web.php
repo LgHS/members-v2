@@ -34,3 +34,5 @@ Route::group(['middleware' => 'keycloak'], function () {
     });
 });
 
+Route::post('deploy', [\App\Http\Controllers\DeployController::class, 'deploy'])->name('deploy');
+

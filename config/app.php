@@ -120,6 +120,7 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
+    'deploy_secret' => env('APP_DEPLOY_SECRET'),
 
     'key' => env('APP_KEY'),
 
