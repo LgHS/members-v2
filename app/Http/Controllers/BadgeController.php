@@ -43,6 +43,16 @@ class BadgeController extends Controller
             return $v['email'] == $current_email;
         }))['id'];
 
+
+        if(Auth::hasRole('badges-admin')) {
+            $user_roles = $this->getUserRoles($current_id);
+            foreach($roles as $k => $role) {
+                if(!key_exists($role['role_name'], $user_roles)) {
+                    unset($roles[$k]);
+                }
+            }
+        }
+
         if($id == 'new') {
             $badge = (object)[];
         } else {
