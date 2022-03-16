@@ -32,6 +32,7 @@ Route::group(['middleware' => 'keycloak'], function () {
         Route::get('/', [App\Http\Controllers\AccessController::class, 'list'])->name('list');
         Route::delete('/{api_token}', [App\Http\Controllers\AccessController::class, 'destroy'])->name('destroy');
     });
+    Route::get('/inject-roles', [\App\Http\Controllers\BadgeController::class, 'injectRoles'])->name('inject-roles');
 });
 
 Route::post('deploy', [\App\Http\Controllers\DeployController::class, 'deploy'])->name('deploy');

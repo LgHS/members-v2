@@ -8,6 +8,11 @@
                 <a href="{{ route('badges::view', ['id' => 'new']) }}" class="button is-success" >
                     Nouveau badge
                 </a>
+                @if(Auth::hasRole('badges-admin'))
+                <a href="{{ route('inject-roles') }}" class="button is-warning" >
+                    Injecter roles
+                </a>
+                @endif
             </div>
         </div>
     </section>

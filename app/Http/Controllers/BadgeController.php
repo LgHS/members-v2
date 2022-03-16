@@ -94,4 +94,18 @@ class BadgeController extends Controller
         $badge->delete();
         return redirect()->back();
     }
+
+    public function injectRoles(Request $request) {
+        $roles = $this->getRoles();
+
+        foreach($roles as $role) {
+            $r = Roles::where('role_name', $role)->first();
+            if(!$r) {
+                $r = new Roles;
+                $r->role_name = $role;
+                $r->save();
+            }
+        }
+        return redirect()->back();
+    }
 }
