@@ -22,6 +22,11 @@ Route::group(['middleware' => 'keycloak'], function () {
         Route::get('/', [App\Http\Controllers\UserController::class, 'list'])->name('list');
     });
     Route::group(['prefix' => 'badges', 'as' => 'badges::'], function () {
+        Route::group(['prefix' => 'roles', 'as' => 'roles::'], function () {
+            Route::get('/', [\App\Http\Controllers\Badge\RoleController::class, 'list'])->name('list');
+            Route::get('/inject', [\App\Http\Controllers\Badge\RoleController::class, 'inject'])->name('inject');
+            Route::get('/{id}', [\App\Http\Controllers\Badge\RoleController::class, 'badgesOrNot'])->name('badgesOrNot');
+        });
         Route::post('/', [App\Http\Controllers\BadgeController::class, 'store'])->name('store');
         Route::get('/{id}', [App\Http\Controllers\BadgeController::class, 'view'])->name('view');
         Route::get('/', [App\Http\Controllers\BadgeController::class, 'list'])->name('list');
@@ -32,7 +37,6 @@ Route::group(['middleware' => 'keycloak'], function () {
         Route::get('/', [App\Http\Controllers\AccessController::class, 'list'])->name('list');
         Route::delete('/{api_token}', [App\Http\Controllers\AccessController::class, 'destroy'])->name('destroy');
     });
-    Route::get('/inject-roles', [\App\Http\Controllers\BadgeController::class, 'injectRoles'])->name('inject-roles');
 });
 
 Route::post('deploy', [\App\Http\Controllers\DeployController::class, 'deploy'])->name('deploy');

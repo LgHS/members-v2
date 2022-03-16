@@ -36,13 +36,12 @@ class BadgeController extends Controller
 
     public function view(Request $request, $id) {
 
-        $roles = Roles::all()->toArray();
+        $roles = Roles::where('badges', 1)->get()->toArray();
         $users = (array)(new KeycloakData())->getUsers();
         $current_email = Auth::id();
         $current_id = current(array_filter($users, function($v) use ($current_email) {
             return $v['email'] == $current_email;
         }))['id'];
-
 
         if(Auth::hasRole('badges-admin')) {
             $user_roles = $this->getUserRoles($current_id);
@@ -102,20 +101,6 @@ class BadgeController extends Controller
             abort(403, 'Access denied');
         }
         $badge->delete();
-        return redirect()->back();
-    }
-
-    public function injectRoles(Request $request) {
-        $roles = $this->getRoles();
-
-        foreach($roles as $role) {
-            $r = Roles::where('role_name', $role)->first();
-            if(!$r) {
-                $r = new Roles;
-                $r->role_name = $role;
-                $r->save();
-            }
-        }
         return redirect()->back();
     }
 }
