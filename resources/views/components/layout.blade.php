@@ -40,9 +40,9 @@
                 <a href="{{ route('roles') }}" class="navbar-item">
                         Accès
                 </a>
-                <!--<a href="{{ route('badges::list') }}" class="navbar-item">
+                <a href="{{ route('badges::list') }}" class="navbar-item">
                         Badges
-                </a>-->
+                </a>
                 @if(Auth::hasRole('members-admin'))
                 <a href="{{ route('accesses::list') }}" class="navbar-item">
                         Clés API
