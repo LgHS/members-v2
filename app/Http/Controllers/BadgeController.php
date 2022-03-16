@@ -28,7 +28,9 @@ class BadgeController extends Controller
             abort(403, 'Access denied');
         }
         $badge->roles_ids = implode(',', $request->get('roles_ids'));
-        $badge->is_banned = $request->get('is_banned', false);
+        if(!($badge->is_banned == 'on' && !Auth::hasRole('badges-admin'))){
+            $badge->is_banned = $request->get('is_banned', false);
+        }
         $badge->welcome_name = $request->get('welcome_name', '');
         $badge->save();
         return redirect()->route('badges::list');

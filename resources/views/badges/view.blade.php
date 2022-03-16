@@ -72,6 +72,7 @@
                             </div>
                         </div>
 
+                        @if(!($id && $badge->is_banned == 'on' && !Auth::hasRole('badges-admin')))
                         <div class="field is-horizontal">
                             <div class="field-label">
                                 <label class="label">Bloqué</label>
@@ -87,6 +88,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
 
                         <div class="field is-horizontal">
                             <div class="field-label">
