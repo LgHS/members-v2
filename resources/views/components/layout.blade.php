@@ -66,6 +66,9 @@
                     <a href="https://chaman.lghs.be/" target="_blank" class="navbar-item">
                         Chaman - Inventaire
                     </a>
+                    <a href="https://cloud.lghs.be/" target="_blank" class="navbar-item">
+                        Nextcloud - Espace de stockage
+                    </a>
                     <a href="https://accounting.lghs.be/" target="_blank" class="navbar-item">
                         Accounting - Comptabilité
                     </a>
