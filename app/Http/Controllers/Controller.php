@@ -170,7 +170,14 @@ class Controller extends BaseController
             foreach($realms as $realm) {
                 $response = Http::withHeaders([
                     'Authorization' => 'Bearer '.$token
-                ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.$realm.'/roles/'.$role.'/groups');
+                ])->get( 
+                    env('KEYCLOAK_BASE_URL', '').
+                    '/admin/realms/'.
+                    $realm.
+                    '/roles/'.
+                    $role.
+                    '/groups'
+                );
                 $roleGroups = $response->ok() ? $response->json() : [];
     
     
@@ -186,17 +193,17 @@ class Controller extends BaseController
                     }
                 }
     
-                foreach($roleGroups as $role) {
+                foreach($roleGroups as $ro) {
                     $response = Http::withHeaders([
                         'Authorization' => 'Bearer '.$token
-                    ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.$realm.'/groups/'.$role['id'].'/members');
+                    ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.$realm.'/groups/'.$ro['id'].'/members');
                     $groupUsers = $response->ok() ? (object)$response->json() : null;
                     foreach($groupUsers as $user) {
                         if(isset($user['attributes']['cardId']) && count($user['attributes']['cardId']) > 0) {
                             $members[] = reset($user['attributes']['cardId']);
                         }
                     }
-                }
+                }  
             }
             
             return array_unique($members);
