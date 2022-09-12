@@ -18,13 +18,11 @@ class BadgeController extends Controller
 
         $profile = (array)(new KeycloakData())->getProfile($email);
 
-        $data = [
-            'attributes' => [
-                'cardId' => Str::uuid()->toString()
-            ]
-        ];
+        
+        $profile['attributes']['cardId'] = Str::uuid()->toString();
+
         $id = $profile['id'];
-        $this->updateProfile($id, $data);
+        $this->updateProfile($id, $profile);
         return redirect()->route('badges::list');
     }
 

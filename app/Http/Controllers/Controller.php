@@ -96,6 +96,19 @@ class Controller extends BaseController
 
     protected function updateProfile($id, $data) {
         $token = $this->getToken();
+
+        unset($data['id']);
+        unset($data['createdTimestamp']);
+        unset($data['username']);
+        unset($data['enabled']);
+        unset($data['totp']);
+        unset($data['emailVerified']);
+        unset($data['email']);
+        unset($data['disableableCredentialTypes']);
+        unset($data['requiredActions']);
+        unset($data['notBefore']);
+        unset($data['access']);
+        
         if($token) {
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer '.$token

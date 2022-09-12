@@ -26,6 +26,7 @@
 
                         <input type="hidden" value="{{ $user->email }}" name="current_email" />
                         <input type="hidden" value="{{ $user->id }}" name="id" />
+                        <input type="hidden" value="{{ $user->attributes['cardId'][0] ?? '' }}" name="attributes[cardId]" />
                         <input type="hidden" value="{{ $user->attributes['old_member_id'][0] ?? '' }}" name="attributes[old_member_id]" />
                         <input type="hidden" value="{{ $user->attributes['old_member_uuid'][0] ?? '' }}" name="attributes[old_member_uuid]" />
                         <input type="hidden" value="{{ $user->attributes['locale'][0] ?? '' }}" name="attributes[locale]" />

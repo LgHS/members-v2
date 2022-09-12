@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\KeycloakData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -50,11 +51,13 @@ class ProfileController extends Controller
             'attributes.locality' => 'required',
             'attributes.country' => 'required',
         ]);
+
         $id = $data['id'];
         unset($data['_token']);
         unset($data['current_email']);
         unset($data['email']); // Disable editing email
         unset($data['id']);
+
         $this->updateProfile($id, $data);
         return redirect()->back();
     }
