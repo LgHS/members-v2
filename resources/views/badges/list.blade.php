@@ -3,16 +3,8 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Badges RFID
+                    Badges
                 </h1>
-                <a href="{{ route('badges::view', ['id' => 'new']) }}" class="button is-success" >
-                    Nouveau badge
-                </a>
-                @if(Auth::hasRole('badges-admin'))
-                    <a href="{{ route('badges::roles::list') }}" class="button is-warning" >
-                        Rôles
-                    </a>
-                @endif
             </div>
         </div>
     </section>
@@ -20,34 +12,50 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Utilisateur</th>
-                                <th>Accès</th>
-                                <th>Bloqué</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Utilisateur</th>
-                                <th>Accès</th>
-                                <th>Bloqué</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            @foreach($badges as $badge)
-                            <tr>
-                                <th><a href="{{ route('badges::view', ['id' => $badge->id]) }}">{{ $badge->id }}</a></th>
-                                <th>{{ $badge->user }}</th>
-                                <td>@foreach($badge->roles as $role) <span class="tag">{{$role['role_name']}}</span> @endforeach</td>
-                                <td>{{ $badge->is_banned }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                    <form>
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <label class="label">UUID RFID</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <input class="input" type="text" name="uuid" placeholder="UUID" disabled value="{{ $badge->uuid ?? '' }}">
+                                    </div>
+                                    Attention, si vous regénérez votre UUID, l'intégralité de vos badges seront désactivés. Vous devrez les flasher à nouveau. N'utilisez cette fonction que dans le cas d'une perte de badge.<br/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <!-- Left empty for spacing -->
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                            <input type="checkbox" required>
+                                            J'ai compris
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <!-- Left empty for spacing -->
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-primary" type="submit">
+                                            Regénérer un nouvel UUID
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
