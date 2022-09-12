@@ -48,7 +48,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <button class="button is-primary" type="submit">
+                                        <button class="button is-danger" type="submit">
                                             Regénérer un nouvel UUID
                                         </button>
                                     </div>
