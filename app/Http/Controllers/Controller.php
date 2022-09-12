@@ -164,32 +164,37 @@ class Controller extends BaseController
         $token = $this->getToken();
         if($token) {
             $members = [];
-            $response = Http::withHeaders([
-                'Authorization' => 'Bearer '.$token
-            ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/roles/'.$role.'/groups');
-            $roleGroups = $response->ok() ? $response->json() : [];
 
+            $realms = [env('KEYCLOAK_REALM', 'master'), 'D54'];
 
-            $response = Http::withHeaders([
-                'Authorization' => 'Bearer '.$token
-            ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/roles/'.$role.'/users');
-            $roleUsers = $response->ok() ? $response->json() : [];
-
-
-            foreach($roleUsers as $user) {
-                if(isset($user['attributes']['cardId']) && count($user['attributes']['cardId']) > 0) {
-                    $members[] = reset($user['attributes']['cardId']);
-                }
-            }
-
-            foreach($roleGroups as $role) {
+            foreach($realms as $realm) {
                 $response = Http::withHeaders([
                     'Authorization' => 'Bearer '.$token
-                ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/groups/'.$role['id'].'/members');
-                $groupUsers = $response->ok() ? (object)$response->json() : null;
-                foreach($groupUsers as $user) {
+                ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.$realm.'/roles/'.$role.'/groups');
+                $roleGroups = $response->ok() ? $response->json() : [];
+    
+    
+                $response = Http::withHeaders([
+                    'Authorization' => 'Bearer '.$token
+                ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.$realm.'/roles/'.$role.'/users');
+                $roleUsers = $response->ok() ? $response->json() : [];
+    
+    
+                foreach($roleUsers as $user) {
                     if(isset($user['attributes']['cardId']) && count($user['attributes']['cardId']) > 0) {
                         $members[] = reset($user['attributes']['cardId']);
+                    }
+                }
+    
+                foreach($roleGroups as $role) {
+                    $response = Http::withHeaders([
+                        'Authorization' => 'Bearer '.$token
+                    ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.$realm.'/groups/'.$role['id'].'/members');
+                    $groupUsers = $response->ok() ? (object)$response->json() : null;
+                    foreach($groupUsers as $user) {
+                        if(isset($user['attributes']['cardId']) && count($user['attributes']['cardId']) > 0) {
+                            $members[] = reset($user['attributes']['cardId']);
+                        }
                     }
                 }
             }
