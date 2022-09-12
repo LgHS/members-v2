@@ -32,7 +32,7 @@ class BadgeController extends Controller
         $email = Auth::id();
         $profile = (array)(new KeycloakData())->getProfile($email);
 
-        $cardId = reset($profile['attributes']['cardId']);
+        $cardId = isset($profile['attributes']['cardId']) ? reset($profile['attributes']['cardId']) : '';
 
         return view('badges/list', ['cardId' => $cardId]);
     }
