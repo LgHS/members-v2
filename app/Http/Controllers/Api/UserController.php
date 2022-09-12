@@ -20,6 +20,9 @@ class UserController extends Controller
         return response()->json($data);
     }
 
+    public function perms($name) {
+        return response()->json($this->getUsersByRoles($name));
+    }
 
     protected function getUsers() {
         $token = $this->getToken();

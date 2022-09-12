@@ -108,7 +108,7 @@ class Controller extends BaseController
         unset($data['requiredActions']);
         unset($data['notBefore']);
         unset($data['access']);
-        
+
         if($token) {
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer '.$token
@@ -154,6 +154,34 @@ class Controller extends BaseController
 
             }
             return $data;
+        }
+        return [];
+    }
+
+
+
+    protected function getUsersByRoles($role) {
+        $token = $this->getToken();
+        if($token) {
+            $members = [];
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer '.$token
+            ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/roles/'.$role.'/groups');
+            $roles = $response->ok() ? (object)$response->json() : [];
+
+            foreach($roles as $role) {
+                $response = Http::withHeaders([
+                    'Authorization' => 'Bearer '.$token
+                ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/groups/'.$role['id'].'/members');
+                $groupUsers = $response->ok() ? (object)$response->json() : null;
+                foreach($groupUsers as $user) {
+                    if(isset($user['attributes']['cardId']) && count($user['attributes']['cardId']) > 0) {
+                        $members[] = reset($user['attributes']['cardId']);
+                    }
+                }
+            }
+            
+            return $members;
         }
         return [];
     }

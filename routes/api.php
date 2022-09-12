@@ -14,4 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/users', [App\Http\Controllers\Api\UserController::class, 'list'])->name('list');
+
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('/users', [App\Http\Controllers\Api\UserController::class, 'list'])->name('list');
+    Route::get('/perms/{name}', [App\Http\Controllers\Api\UserController::class, 'perms'])->name('perms');
+
+});
