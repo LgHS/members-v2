@@ -167,9 +167,22 @@ class Controller extends BaseController
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer '.$token
             ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/roles/'.$role.'/groups');
-            $roles = $response->ok() ? (object)$response->json() : [];
+            $roleGroups = $response->ok() ? $response->json() : [];
 
-            foreach($roles as $role) {
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer '.$token
+            ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/roles/'.$role.'/users');
+            $roleUsers = $response->ok() ? $response->json() : [];
+
+
+            foreach($roleUsers as $user) {
+                if(isset($user['attributes']['cardId']) && count($user['attributes']['cardId']) > 0) {
+                    $members[] = reset($user['attributes']['cardId']);
+                }
+            }
+
+            foreach($roleGroups as $role) {
                 $response = Http::withHeaders([
                     'Authorization' => 'Bearer '.$token
                 ])->get(env('KEYCLOAK_BASE_URL', '').'/admin/realms/'.env('KEYCLOAK_REALM', 'master').'/groups/'.$role['id'].'/members');
@@ -181,7 +194,7 @@ class Controller extends BaseController
                 }
             }
             
-            return $members;
+            return array_unique($members);
         }
         return [];
     }
