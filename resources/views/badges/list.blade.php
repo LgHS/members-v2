@@ -3,7 +3,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Badges
+                    Badge
                 </h1>
             </div>
         </div>
@@ -12,15 +12,16 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <form>
+                    <form method="POST">
+                        @csrf
                         <div class="field is-horizontal">
                             <div class="field-label">
-                                <label class="label">UUID RFID</label>
+                                <label class="label">UUID</label>
                             </div>
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control is-expanded">
-                                        <input class="input" type="text" name="uuid" placeholder="UUID" disabled value="{{ $badge->uuid ?? '' }}">
+                                        <input class="input" type="text" name="uuid" placeholder="UUID" disabled value="{{ $cardId ?? '' }}">
                                     </div>
                                     Attention, si vous regénérez votre UUID, l'intégralité de vos badges seront désactivés. Vous devrez les flasher à nouveau. N'utilisez cette fonction que dans le cas d'une perte de badge.<br/>
                                 </div>
