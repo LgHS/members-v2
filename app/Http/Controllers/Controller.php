@@ -206,7 +206,7 @@ class Controller extends BaseController
                 }  
             }
             
-            return array_unique($members);
+            return array_values(array_unique($members));
         }
         return [];
     }
