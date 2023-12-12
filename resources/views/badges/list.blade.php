@@ -45,7 +45,7 @@
                                 <!-- Left empty for spacing -->
                             </div>
                             <div class="w-3/4">
-                                <button class="bg-danger text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                <button class="btn" type="submit">
                                     Regénérer un nouvel UUID
                                 </button>
                             </div>

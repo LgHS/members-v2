@@ -42,10 +42,10 @@
 
                         <div class="flex items-center mb-6">
                             <div class="w-full">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                <button class="btn" type="submit">
                                     Enregistrer mes données
                                 </button>
-                                <a class="bg-blue-100 hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 border border-blue-500 rounded" href="https://auth.lghs.be/auth/realms/LGHS/account/password" target="_blank">
+                                <a class="btn" href="https://auth.lghs.be/auth/realms/LGHS/account/password" target="_blank">
                                     Changer mon mot de passe
                                 </a>
                             </div>

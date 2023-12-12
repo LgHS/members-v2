@@ -12,7 +12,7 @@
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" type="text" name="id" placeholder="Description">
                         </div>
                         <div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <button type="submit" class="btn">
                                 Générer une clé
                             </button>
                         </div>
@@ -51,7 +51,7 @@
                                     <form action="{{ route('accesses::destroy', ['api_token' => $access->api_token]) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                        <button type="submit" class="btn">
                                             Supprimer
                                         </button>
                                     </form>
