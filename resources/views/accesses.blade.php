@@ -8,14 +8,10 @@
                 <form action="{{route('accesses::generate')}}" method="POST" class="mt-4">
                     @csrf
                     <div class="flex">
-                        <div class="flex-grow mr-2">
-                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" type="text" name="id" placeholder="Description">
-                        </div>
-                        <div>
-                            <button type="submit" class="btn">
-                                Générer une clé
-                            </button>
-                        </div>
+                        <input class="flex-grow appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-r-none" type="text" name="id" placeholder="Description">
+                        <button type="submit" class="btn rounded-l-none">
+                            Générer une clé
+                        </button>
                     </div>
                 </form>
             </div>
