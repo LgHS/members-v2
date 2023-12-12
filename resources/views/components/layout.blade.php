@@ -34,30 +34,30 @@
         </div>
         <div id="navbarBasicExample">
             <div class="p-4 flex flex-row">
-                <a href="{{ route('profile') }}" class="block py-2 px-2 mx-2 border-b">
+                <a href="{{ route('profile') }}" class="block py-2 px-2 mx-2 border-b hover:bg-gray-50">
                     Mon profil
                 </a>
-                <a href="{{ route('roles') }}" class="block py-2 px-2 mx-2 border-b">
+                <a href="{{ route('roles') }}" class="block py-2 px-2 mx-2 border-b hover:bg-gray-50">
                     Accès
                 </a>
-                <a href="{{ route('badges::list') }}" class="block py-2 px-2 mx-2 border-b">
+                <a href="{{ route('badges::list') }}" class="block py-2 px-2 mx-2 border-b hover:bg-gray-50">
                     Badges
                 </a>
                 @if(Auth::hasRole('members-admin'))
-                    <a href="{{ route('accesses::list') }}" class="block py-2 px-2 mx-2 border-b">
+                    <a href="{{ route('accesses::list') }}" class="block py-2 px-2 mx-2 border-b hover:bg-gray-50">
                         Clés API
                     </a>
                 @endif
-                    <a class="justify-end bg-red-500 text-white py-2 px-4 mx-2 rounded" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
+                    <a class="justify-end bg-red-500 text-white py-2 px-4 mx-2 rounded hover:bg-red-200" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
                         Déconnexion
                     </a>
             </div>
 
             <div class="block p-2">
                 <div class="py-2">
-                    Apps
+                    <span class="px-2 font-bold text-blue-400">Apps</span>
                     <div class="py-2 flex flex-row">
-                        <a href="https://wiki.liegehacker.space/" target="_blank" class="block p-2">
+                        <a href="https://wiki.liegehacker.space/" target="_blank" class="block p-2 m-2">
                             Bookstack - Wiki
                         </a>
                         <a href="https://chat.lghs.be/" target="_blank" class="block p-2 m-2">
