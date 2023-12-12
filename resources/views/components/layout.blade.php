@@ -20,80 +20,73 @@
 </head>
 <body>
 <div>
-    <nav id="nav__main" class="navbar is-sticky" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <g-link class="navbar-item" to="/">
-                <img src="https://github.com/LgHS/branding/blob/master/horizontal/text.svg?raw=true" class="logo">
+    <nav id="nav__main" class="sticky top-0 z-50 bg-white shadow" aria-label="main navigation">
+        <div class="flex items-center justify-between p-4">
+            <g-link class="flex items-center" to="/">
+                <img src="https://github.com/LgHS/branding/blob/master/horizontal/text.svg?raw=true" alt="logo" class="logo">
             </g-link>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar">
-                <a href="{{ route('profile') }}" class="navbar-item">
-                        Mon profil
+        <div id="navbarBasicExample" class="hidden">
+            <div class="p-4">
+                <a href="{{ route('profile') }}" class="block py-2">
+                    Mon profil
                 </a>
-                <a href="{{ route('roles') }}" class="navbar-item">
-                        Accès
+                <a href="{{ route('roles') }}" class="block py-2">
+                    Accès
                 </a>
-                <a href="{{ route('badges::list') }}" class="navbar-item">
-                        Badges
+                <a href="{{ route('badges::list') }}" class="block py-2">
+                    Badges
                 </a>
                 @if(Auth::hasRole('members-admin'))
-                <a href="{{ route('accesses::list') }}" class="navbar-item">
+                    <a href="{{ route('accesses::list') }}" class="block py-2">
                         Clés API
-                </a>
+                    </a>
                 @endif
             </div>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                Apps
+            <div class="block py-2">
+                <a class="py-2">
+                    Apps
                 </a>
-                <div class="navbar-dropdown">
-                    <a href="https://wiki.liegehacker.space/" target="_blank" class="navbar-item">
+                <div class="py-2">
+                    <a href="https://wiki.liegehacker.space/" target="_blank" class="block py-2">
                         Bookstack - Wiki
                     </a>
-                    <a href="https://chat.lghs.be/" target="_blank" class="navbar-item">
+                    <a href="https://chat.lghs.be/" target="_blank" class="block py-2">
                         Rocket.Chat - Chat
                     </a>
-                    <!--<a href="https://mattermost.lghs.be/" target="_blank" class="navbar-item">
-                        Mattermost - Chat
-                    </a>-->
-                    <a href="https://chaman.lghs.be/" target="_blank" class="navbar-item">
+                    <a href="https://chaman.lghs.be/" target="_blank" class="block py-2">
                         Chaman - Inventaire
                     </a>
-                    <a href="https://cloud.lghs.be/" target="_blank" class="navbar-item">
+                    <a href="https://cloud.lghs.be/" target="_blank" class="block py-2">
                         Nextcloud - Espace de stockage
                     </a>
-                    <a href="https://accounting.lghs.be/" target="_blank" class="navbar-item">
+                    <a href="https://accounting.lghs.be/" target="_blank" class="block py-2">
                         Accounting - Comptabilité
                     </a>
                 </div>
             </div>
-            <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="field is-grouped">
-                <p class="control">
-                    <a class="button is-danger" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
-                    <span>Déconnexion</span>
+            <div class="flex justify-end p-4">
+                <div class="space-x-4">
+                    <a class="bg-red-500 text-white py-2 px-4 rounded" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
+                        Déconnexion
                     </a>
-                </p>
                 </div>
-            </div>
             </div>
         </div>
     </nav>
 
     {{ $slot }}
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="name">Liège Hackerspace - <a href="https://github.com/LgHS/members-v2">Passport</a> formerly members-v2.</div>
+    <footer class="bg-gray-100">
+        <div class="container mx-auto py-4">
+            <div class="text-center">
+                <div>Liège Hackerspace - <a href="https://github.com/LgHS/members-v2" class="text-blue-600">Passport</a> formerly members-v2.</div>
             </div>
         </div>
     </footer>
@@ -102,7 +95,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
         if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach( el => {
+            $navbarBurgers.forEach(el => {
                 el.addEventListener('click', () => {
                     const target = el.dataset.target;
                     const $target = document.getElementById(target);
@@ -112,6 +105,3 @@
             });
         }
     });
-</script>
-</body>
-</html>
