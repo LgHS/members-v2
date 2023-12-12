@@ -1,9 +1,9 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-@import "variables";
-// Bootstrap
-@import '~bulma/bulma';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .is-sticky {
     position: sticky;
