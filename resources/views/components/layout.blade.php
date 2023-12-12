@@ -55,7 +55,7 @@
 
             <div class="block p-2">
                 <div class="py-2">
-                    <span class="px-2 font-bold text-blue-400">Apps</span>
+                    <span class="px-4 font-bold text-blue-400">Apps</span>
                     <div class="py-2 flex flex-row">
                         <a href="https://wiki.liegehacker.space/" target="_blank" class="block p-2 m-2">
                             Bookstack - Wiki
