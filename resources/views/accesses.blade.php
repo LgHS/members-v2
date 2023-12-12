@@ -9,7 +9,7 @@
                     @csrf
                     <div class="flex">
                         <input class="flex-grow appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-r-none" type="text" name="id" placeholder="Description">
-                        <button type="submit" class="btn rounded-l-none">
+                        <button type="submit" class="btn rounded-l-none flex-shrink-0 whitespace-nowrap">
                             Générer une clé
                         </button>
                     </div>
