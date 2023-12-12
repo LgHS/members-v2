@@ -32,7 +32,7 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarBasicExample" class="hidden">
+        <div id="navbarBasicExample">
             <div class="p-4 flex flex-row">
                 <a href="{{ route('profile') }}" class="block py-2 px-2 mx-2 border-b">
                     Mon profil
@@ -48,30 +48,31 @@
                         Clés API
                     </a>
                 @endif
-                <div class="block p-2">
-                    <div class="py-2">
-                        Apps
-                        <div class="py-2 flex flex-row">
-                            <a href="https://wiki.liegehacker.space/" target="_blank" class="block p-2">
-                                Bookstack - Wiki
-                            </a>
-                            <a href="https://chat.lghs.be/" target="_blank" class="block p-2 m-2">
-                                Rocket.Chat - Chat
-                            </a>
-                            <a href="https://chaman.lghs.be/" target="_blank" class="block p-2 m-2">
-                                Chaman - Inventaire
-                            </a>
-                            <a href="https://cloud.lghs.be/" target="_blank" class="block p-2 m-2">
-                                Nextcloud - Espace de stockage
-                            </a>
-                            <a href="https://accounting.lghs.be/" target="_blank" class="block p-2 m-2">
-                                Accounting - Comptabilité
-                            </a>
-                        </div>
-                    </div>
                     <a class="justify-end bg-red-500 text-white py-2 px-4 mx-2 rounded" href="https://auth.lghs.be/auth/realms/LGHS/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fpassport.lghs.be">
                         Déconnexion
                     </a>
+            </div>
+
+            <div class="block p-2">
+                <div class="py-2">
+                    Apps
+                    <div class="py-2 flex flex-row">
+                        <a href="https://wiki.liegehacker.space/" target="_blank" class="block p-2">
+                            Bookstack - Wiki
+                        </a>
+                        <a href="https://chat.lghs.be/" target="_blank" class="block p-2 m-2">
+                            Rocket.Chat - Chat
+                        </a>
+                        <a href="https://chaman.lghs.be/" target="_blank" class="block p-2 m-2">
+                            Chaman - Inventaire
+                        </a>
+                        <a href="https://cloud.lghs.be/" target="_blank" class="block p-2 m-2">
+                            Nextcloud - Espace de stockage
+                        </a>
+                        <a href="https://accounting.lghs.be/" target="_blank" class="block p-2 m-2">
+                            Accounting - Comptabilité
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
