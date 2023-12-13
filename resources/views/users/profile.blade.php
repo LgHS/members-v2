@@ -59,7 +59,7 @@
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Téléphone</label>
                             <div class="flex shadow rounded border focus:outline-none focus:shadow-outline">
-                                <span class="px-4 rounded-e-none">+</span>
+                                <span class="pl-3 rounded-e-none leading-tight">+</span>
                                 <input
                                     class="appearance-none rounded-e w-full py-2 px-3 text-gray-700 leading-tight"
                                     type="tel" required name="attributes[phoneNumber]" placeholder="Numéro de téléphone"
@@ -87,7 +87,7 @@
                                     value="{{ $user->attributes['postal_code'][0] ?? '' }}">
 
                                 <input
-                                    class="appearance-none w-full py-2 px-3 text-gray-700 leading-tight"
+                                    class="border-l appearance-none w-full py-2 px-3 text-gray-700 leading-tight"
                                     type="text" required name="attributes[locality]" placeholder="Localité"
                                     value="{{ $user->attributes['locality'][0] ?? '' }}">
                             </div>
@@ -99,7 +99,6 @@
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text" required name="attributes[country]" placeholder="Pays"
                                 value="{{ $user->attributes['country'][0] ?? '' }}">
-
                         </div>
 
                         <div>
