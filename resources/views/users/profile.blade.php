@@ -35,29 +35,29 @@
                                name="attributes[old_member_uuid]"/>
                         <input type="hidden" value="{{ $user->attributes['locale'][0] ?? '' }}"
                                name="attributes[locale]"/>
-                        <div class="field is-horizontal">
-                            <label class="label">Nom d'utilisateur</label>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Nom d'utilisateur</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text" name="username" required placeholder="Nom d'utilisateur"
                                 value="{{ $user->username }}">
                         </div>
-                        <div class="field is-horizontal">
-                            <label class="label">Nom & Prénom</label>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Nom & Prénom</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text" name="lastName" required placeholder="Nom" value="{{ $user->lastName }}">
                         </div>
-                        <div class="field is-horizontal">
-                            <label class="label">Email</label>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="email" name="email" required placeholder="Email" disabled
                                 value="{{ $user->email }}">
                         </div>
 
-                        <div class="field is-horizontal">
-                            <label class="label">Téléphone</label>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Téléphone</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="tel" required name="attributes[phoneNumber]" placeholder="Numéro de téléphone"
@@ -65,8 +65,8 @@
 
                         </div>
 
-                        <div class="field is-horizontal">
-                            <label class="label">Rue & Numéro</label>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Rue & Numéro</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text" required name="attributes[street]" placeholder="Rue & numéro"
@@ -74,8 +74,8 @@
 
                         </div>
 
-                        <div class="field is-horizontal">
-                            <label class="label">Code postal & Localité</label>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Code postal & Localité</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text" required name="attributes[postal_code]" placeholder="Code postal"
@@ -87,8 +87,8 @@
                                 value="{{ $user->attributes['locality'][0] ?? '' }}">
                         </div>
 
-                        <div class="field is-horizontal">
-                            <label class="label">Pays</label>
+                        <div class="mb-10">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Pays</label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text" required name="attributes[country]" placeholder="Pays"
@@ -96,22 +96,15 @@
 
                         </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <button class="button is-primary" type="submit">
-                                            Enregistrer mes données
-                                        </button>
-                                        <a class="button is-link"
-                                           href="https://auth.lghs.be/auth/realms/LGHS/account/password"
-                                           target="_blank">
-                                            Changer mon mot de passe
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <button class="btn" type="submit">
+                                Enregistrer mes données
+                            </button>
+                            <a class="btn"
+                               href="https://auth.lghs.be/auth/realms/LGHS/account/password"
+                               target="_blank">
+                                Changer mon mot de passe
+                            </a>
                         </div>
 
                     </form>
