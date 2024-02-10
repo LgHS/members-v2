@@ -25,12 +25,6 @@
             <g-link class="flex items-center" to="/">
                 <img src="https://github.com/LgHS/branding/blob/master/horizontal/text.svg?raw=true" alt="logo" class="logo">
             </g-link>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
         </div>
         <div id="navbarBasicExample">
             <div class="p-4 flex flex-col md:flex-row relative gap-2">
