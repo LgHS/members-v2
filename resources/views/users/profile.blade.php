@@ -64,7 +64,7 @@
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Téléphone</label>
                             <div class="flex shadow rounded border focus:outline-none focus:shadow-outline">
-                                <span class="pl-3 rounded-e-none leading-tight">+</span>
+                                <span class="pl-3 rounded-e-none leading-tight pt-2">+</span>
                                 <input
                                     class="appearance-none rounded-e w-full py-2 px-3 text-gray-700 leading-tight"
                                     type="tel" required name="attributes[phoneNumber]" placeholder="Numéro de téléphone"
