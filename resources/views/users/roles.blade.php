@@ -20,7 +20,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="w-screen -m-4 md:-m-0 p-4 md:p-0 overflow-x-auto overflow-hidden">
+                    <div class="w-screen md:w-full -m-4 md:-m-0 p-4 md:p-0 overflow-x-auto overflow-hidden">
                         <h2 class="text-2xl font-semibold mb-3">Rôles (Permissions)</h2>
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
