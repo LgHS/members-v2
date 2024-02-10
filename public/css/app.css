@@ -530,17 +530,6 @@ video {
 .min-w-full{
   min-width: 100%;
 }
-.min-w-fit{
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
-.min-w-min{
-  min-width: -moz-min-content;
-  min-width: min-content;
-}
-.max-w-full{
-  max-width: 100%;
-}
 .flex-shrink-0{
   flex-shrink: 0;
 }
@@ -590,9 +579,6 @@ video {
 }
 .overflow-x-auto{
   overflow-x: auto;
-}
-.overflow-y-auto{
-  overflow-y: auto;
 }
 .whitespace-nowrap{
   white-space: nowrap;
@@ -930,7 +916,7 @@ footer .name {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
-#appButton:hover #appMenu{
+#appButton:hover #appMenu, #appButton:active #appMenu{
   display: block;
 }
 
@@ -960,15 +946,6 @@ footer .name {
   }
   .md\:-m-0{
     margin: -0px;
-  }
-  .md\:w-12{
-    width: 3rem;
-  }
-  .md\:w-24{
-    width: 6rem;
-  }
-  .md\:w-60{
-    width: 15rem;
   }
   .md\:w-72{
     width: 18rem;
