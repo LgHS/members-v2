@@ -48,7 +48,7 @@
                         Clés API
                     </a>
                 @endif
-                <div id="appButton" class="block py-2 px-2 border-b hover:bg-gray-50 text-left relative">
+                <div id="appButton" class="block py-2 px-2 border-b hover:bg-gray-50 text-left relative" tabindex="0">
                     Apps
                     <div id="appMenu" class="hidden p-2 absolute top-10 left-0 bg-white shadow w-full md:w-72">
                         <div class="flex flex-col gap-2">
