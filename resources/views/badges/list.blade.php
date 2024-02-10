@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="bg-primary text-white">
+    <section class="bg-primary text-white px-4 md:px-0">
         <div class="py-16">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-semibold">
@@ -8,7 +8,7 @@
             </div>
         </div>
     </section>
-    <section class="py-8">
+    <section class="py-8 px-4 md:px-0">
         <div class="container mx-auto">
             <div class="flex flex-wrap">
                 <div class="flex-grow">

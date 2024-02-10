@@ -1,6 +1,6 @@
 <x-layout>
     <section class="bg-blue-500 text-white">
-        <div class="py-16">
+        <div class="py-16 px-4 md:px-0">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-semibold">
                     Profil
@@ -8,7 +8,7 @@
             </div>
         </div>
     </section>
-    <section class="py-8">
+    <section class="py-8 px-4 md:px-0">
         <div class="container mx-auto">
             @if ($errors->any())
                 <div class="bg-red-500 text-white p-4 rounded-lg">
@@ -44,9 +44,14 @@
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Nom & Prénom</label>
+                            <div class="flex shadow rounded border focus:outline-none focus:shadow-outline">
                             <input
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                class="appearance-none w-full py-2 px-3 text-gray-700 leading-tight"
                                 type="text" name="lastName" required placeholder="Nom" value="{{ $user->lastName }}">
+                            <input
+                                class="border-l appearance-none w-full py-2 px-3 text-gray-700 leading-tight"
+                                type="text" name="firstName" required placeholder="Prénom" value="{{ $user->firstName }}">
+                            </div>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
@@ -101,11 +106,11 @@
                                 value="{{ $user->attributes['country'][0] ?? '' }}">
                         </div>
 
-                        <div>
-                            <button class="btn" type="submit">
+                        <div class="flex flex-col md:flex-row gap-3">
+                            <button class="btn text-center" type="submit">
                                 Enregistrer mes données
                             </button>
-                            <a class="btn"
+                            <a class="btn text-center"
                                href="https://auth.lghs.be/auth/realms/LGHS/account/password"
                                target="_blank">
                                 Changer mon mot de passe

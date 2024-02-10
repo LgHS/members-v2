@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="bg-blue-500 text-white">
+    <section class="bg-blue-500 text-white px-4 md:px-0">
         <div class="py-16">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-semibold">
@@ -8,7 +8,7 @@
             </div>
         </div>
     </section>
-    <section class="py-8">
+    <section class="py-8 px-4 md:px-0">
         <div class="container mx-auto">
             <div class="flex flex-wrap">
                 <div class="flex-grow">
@@ -20,7 +20,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div>
+                    <div class="w-screen -m-4 md:-m-0 p-4 md:p-0 overflow-x-auto overflow-hidden">
                         <h2 class="text-2xl font-semibold mb-3">Rôles (Permissions)</h2>
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">

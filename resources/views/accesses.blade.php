@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="bg-blue-500 text-white">
+    <section class="bg-blue-500 text-white px-4 md:px-0">
         <div class="py-16">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-semibold">
