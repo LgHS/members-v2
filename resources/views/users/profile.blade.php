@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Téléphone</label>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Téléphone (format:  32470000000)</label>
                             <div class="flex shadow rounded border focus:outline-none focus:shadow-outline">
                                 <span class="pl-3 rounded-e-none leading-tight pt-2">+</span>
                                 <input
