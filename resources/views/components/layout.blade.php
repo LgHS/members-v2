@@ -32,10 +32,10 @@
                     Mon profil
                 </a>
                 <a href="{{ route('roles') }}" class="block py-2 px-2 border-b hover:bg-gray-50">
-                    Accès
+                    Permissions
                 </a>
                 <a href="{{ route('badges::list') }}" class="block py-2 px-2 border-b hover:bg-gray-50">
-                    Badges
+                    RFID
                 </a>
                 @if(Auth::hasRole('members-admin'))
                     <a href="{{ route('accesses::list') }}" class="block py-2 px-2 border-b hover:bg-gray-50">
