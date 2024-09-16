@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   passport:
     container_name: lghs-passport
@@ -10,9 +8,6 @@ services:
       - .:/var/www/html
     networks:
       - net
-
-volumes:
-  database_data:
 
 networks:
   net:

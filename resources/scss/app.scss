@@ -36,8 +36,8 @@
 }
 
 .logo {
-    max-height: 5.75rem !important;
-    height: 5.75rem;
+    max-height: 3.75rem !important;
+    height: 3.75rem;
 }
 html, body, #app {
     height: 100%;
@@ -48,9 +48,6 @@ html, body, #app {
     justify-content: space-between;
     align-items: stretch;
     height: 100%;
-}
-nav#nav__main {
-    flex: none;
 }
 #app > section {
     flex-shrink: 1;
